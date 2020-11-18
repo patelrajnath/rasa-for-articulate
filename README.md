@@ -26,7 +26,7 @@ INTO
     volumes: ["${MODEL_DIR:-./local-storage/rasa/nlu-model}:/app/projects", "${RASA_CONFIG:-./local-storage/rasa/rasa-config.yml}:/app/config.yml", "./local-storage/rasa/logs:/app/logs"]
 ```
 
-And add new context for ner-service
+And add docker-context for ner-service
 ```dockerfile
 ner-service:
     image: ner-service:latest
