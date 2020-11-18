@@ -45,6 +45,11 @@ We can enable this component adding the following config in articulate-
 ```json
   {
     "name": "custom_entities",
-    "max_steps": 1000
+    "dropout": 0.1,
+    "accumulate_gradient": 1,
+    "patience": 100,
+    "max_epochs": 0,
+    "max_steps": 1000,
+    "eval_frequency": 100,
   }
 ```
