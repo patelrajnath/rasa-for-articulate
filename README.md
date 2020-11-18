@@ -5,7 +5,7 @@ pipeline.
 
 ### Build docker image
 ```bash
-$docker image build -t rasa-for-articulate:latest .
+$docker build -t rasa-for-articulate:latest .
 ```
 
 ### Build image of ner-service
