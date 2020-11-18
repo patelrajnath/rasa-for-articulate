@@ -1,18 +1,18 @@
-## rasa-for-articulate
+# rasa-for-articulate
 This project is an example of extending the articulate rasa component.
 Using this project, we added new component named `custom_entities` in the rasa 
 pipeline.
 
-#### Build docker image
+### Build docker image
 ```bash
 $docker image build -t rasa-for-articulate:latest .
 ```
 
-#### Build image of ner-service
+### Build image of ner-service
 To use the `custom_entities` in the rasa pipeline, you need to build
 another docker image using- https://github.com/patelrajnath/ner_service
 
-#### Update docker-compose.yml in articulate repository
+### Update docker-compose.yml in articulate repository
 Change-
 ```dockerfile
   rasa:
@@ -40,7 +40,7 @@ ner-service:
       - ./ner-training:/app/project-ner/metrics
 ```
 
-#### Add the component in the pipeline
+### Add the component in the pipeline
 We can enable this component adding the following config in articulate-
 ```json
   {
