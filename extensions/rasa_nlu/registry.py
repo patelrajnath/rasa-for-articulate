@@ -20,6 +20,10 @@ from rasa_nlu.classifiers.keyword_intent_classifier import \
 from rasa_nlu.classifiers.mitie_intent_classifier import MitieIntentClassifier
 from rasa_nlu.classifiers.sklearn_intent_classifier import \
     SklearnIntentClassifier
+
+from rasa_nlu.classifiers.ed_classifier import \
+    flask_serving_classifier
+
 from rasa_nlu.classifiers.embedding_intent_classifier import \
     EmbeddingIntentClassifier
 from rasa_nlu.extractors.duckling_http_extractor import DucklingHTTPExtractor
@@ -57,7 +61,7 @@ component_classes = [
     CountVectorsFeaturizer,
     MitieTokenizer, SpacyTokenizer, WhitespaceTokenizer, JiebaTokenizer,
     SklearnIntentClassifier, MitieIntentClassifier, KeywordIntentClassifier,
-    EmbeddingIntentClassifier
+    EmbeddingIntentClassifier, flask_serving_classifier
 ]
 
 # Mapping from a components name to its class to allow name based lookup.
