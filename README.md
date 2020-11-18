@@ -5,7 +5,7 @@ pipeline.
 
 ### Build docker image
 ```bash
-$docker image build -t rasa-for-articulate:latest .
+$docker build -t rasa-for-articulate:latest .
 ```
 
 ### Build image of ner-service
@@ -26,7 +26,7 @@ INTO
     volumes: ["${MODEL_DIR:-./local-storage/rasa/nlu-model}:/app/projects", "${RASA_CONFIG:-./local-storage/rasa/rasa-config.yml}:/app/config.yml", "./local-storage/rasa/logs:/app/logs"]
 ```
 
-And add new context for ner-service
+And add docker-context for ner-service
 ```dockerfile
 ner-service:
     image: ner-service:latest
@@ -45,6 +45,12 @@ We can enable this component adding the following config in articulate-
 ```json
   {
     "name": "custom_entities",
-    "max_steps": 1000
+    "arch": "default",
+    "dropout": 0.1,
+    "accumulate_gradient": 1,
+    "patience": 100,
+    "max_epochs": 0,
+    "max_steps": 1000,
+    "eval_frequency": 100,
   }
 ```
