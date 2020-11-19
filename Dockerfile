@@ -12,6 +12,7 @@ USER root
 
 COPY ./extensions/rasa_nlu/registry.py /app/rasa_nlu/
 COPY ./extensions/rasa_nlu/extractors/custom_spacy_entity_extractor_remote.py /app/rasa_nlu/extractors/
+COPY ./extensions/rasa_nlu/classifiers/ed_classifier.py /app/rasa_nlu/classifiers/
 
 # Switch back to non-root to run code
 #USER 1001
